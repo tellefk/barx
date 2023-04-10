@@ -1,0 +1,52 @@
+{% include 'layout.html' %} 
+<div class ="container lower" >
+    <div class ="card text-center ">
+        <div class="card-header main-colors">
+            <h4> Your projects</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">List of projects</h5>
+            <p class="card-text"> Information regarding projects</p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th> </th>
+                        <th scope="col">info</th> </th>
+                        <th scope="col">Actions</th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for todo in projects %}
+                <tr class="pointer">
+                    <td>{{loop.index}}</td>
+                    <td>{{todo.title}}</td>
+                    <td>
+                        <button type="button", class="btn btn-success">Complete</button>
+                        <button type="button" onclick="window.location.href='edit-project/{{todo.id}}'", class="btn btn-primary">Edit</button>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href='add-project/'> add new project</a>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container lower">
+  <div class="row">
+    {% for project in projects %}
+    <div class="col-md-4">
+        <a class="btn" href="{{project.id}}/">
+          <div class="card-mod card-1">
+            <h3>Prosjekt</h3>
+            <p>{{project.title}}</p> 
+            <!-- <p>{{project.id}}</p> -->
+            <p>789/1500 timer brukt</p>
+          </div>
+        </a>
+       </div>
+       {% endfor %}
+    </div>
