@@ -4,57 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <style>
-      body {font-family: Arial;}
-      
-      /* Style the tab */
-      .tab {
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: #f1f1f1;
-      }
-      
-      /* Style the buttons inside the tab */
-      .tab button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-        font-size: 17px;
-      }
-        .tabcontent {
-        animation: fadeEffect 1s; /* Fading effect takes 1 second */
-      }
-
-      /* Go from zero to full opacity */
-      @keyframes fadeEffect {
-        from {opacity: 0;}
-        to {opacity: 1;}
-      }
-      
-      /* Change background color of buttons on hover */
-      .tab button:hover {
-        background-color: #ddd;
-      }
-      
-      /* Create an active/current tablink class */
-      .tab button.active {
-        background-color: #ccc;
-      }
-      
-      /* Style the tab content */
-      .tabcontent {
-        display: none;
-        padding: 6px 12px;
-        border: 1px solid #ccc;
-        border-top: none;
-      }
-      </style>
     <link rel="shortcut icon" type="image/png" href="img/icon.png" />
-
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
       rel="stylesheet"
@@ -63,323 +13,337 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{url_for('static',path='/todo/css/barXStyle.css') }}"
+      href="{{url_for('static',path='/barx/css/barXStyle.css') }}"
     />
     <title>The BarX</title>
 
     <!-- <script defer src="script.js"></script> -->
     <script
       defer
-      src="{{url_for('static',path='/todo/js/script.js')}}"
+      src="{{url_for('static',path='/barx/js/script.js')}}"
     ></script>
   </head>
   <body>
-    <header class="header">
-      <nav class="nav">
+    <div class="container">
+      <header class="header">
+        <nav class="nav">
+          <img
+            src="{{url_for('static',path='/barx/img/OXS_logo_sort.png') }}"
+            alt="BarX logo"
+            class="nav__logo"
+            id="logo"
+            designer="Tellef"
+            data-version-number="3.0"
+          />
+          <ul class="nav__links">
+            <li class="nav__item">
+              <a class="nav__link" href="#section--1">Features</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#section--2">Product details</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#section--3">Feedbacks</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link nav__link--btn btn--show-modal" href="#"
+                >Get the BarX</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <video autoplay muted loop class="back-video" style="max-width: 100%">
+            <source
+              src="../static/barx/video/Muscle Garden_BarX Promo.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div class="header__title">
+            <!-- <h1 onclick="alert('HTML alert')"> -->
+            <!-- <h1> The 
+              <span class="highlight">BarX</span>
+            </h1>  -->
+            <h1>
+              The
+              <span class="highlight">BarX</span> <br />
+              When
+              <!-- Green highlight effect -->
+              <span class="highlight">traning</span>
+              meets<br />
+              <span class="highlight">minimalist</span>
+            </h1>
+            <h4></h4>
+            <button class="btn--text btn--scroll-to">
+              Learn more &DownArrow;
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section class="section" id="section--1">
+        <div class="section__title">
+          <h2 class="section__description">Features</h2>
+          <h3 class="section__header">
+            Everything you need in a modern traning equipement.
+          </h3>
+        </div>
+
+        <div class="features">
+          <img
+            src="../static/barx/img/BarX1.jpg"
+            data-src="../static/barx/img/BarX1.jpg"
+            alt="Computer"
+            class="features__img lazy-img"
+          />
+          <div class="features__feature">
+            <div class="features__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-monitor"></use>
+              </svg>
+            </div>
+            <h5 class="features__header">Flexible training</h5>
+            <p>
+              Transform your body and mind with our state-of-the-art training
+              equipment. Whether you're a beginner or a seasoned athlete, our
+              versatile apparatus will push you to new levels of strength and
+              endurance. With customizable workouts and a sleek, compact design,
+              you can easily fit a powerful workout into your busy schedule.
+              Take control of your fitness journey today and see the amazing
+              results for yourself!
+            </p>
+          </div>
+
+          <div class="features__feature">
+            <div class="features__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-trending-up"></use>
+              </svg>
+            </div>
+            <h5 class="features__header">Outdoor Performance</h5>
+            <p>
+              If you're looking to boost your fitness levels and build a strong,
+              lean physique, consider incorporating body weight exercises into
+              your training routine
+            </p>
+          </div>
+          <img
+            src="../static/barx/img/BarX2.jpg"
+            data-src="../static/barx/img/BarX2.jpg"
+            alt="Plant"
+            class="features__img lazy-img"
+          />
+
+          <img
+            src="../static/barx/img/BarX3.jpg"
+            data-src="../static/barx/img/BarX3.jpg"
+            alt="Credit card"
+            class="features__img lazy-img"
+          />
+          <div class="features__feature">
+            <div class="features__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-credit-card"></use>
+              </svg>
+            </div>
+            <h5 class="features__header">Over 25 unque exercises</h5>
+            <p>
+              Training with your own body weight is a highly effective and
+              efficient way to improve your physical fitness. By using your own
+              body as resistance, you can work multiple muscle groups at once,
+              improve your balance and coordination, and increase your overall
+              strength and conditioning. .
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="section--2">
+        <div class="section__title">
+          <h2 class="section__description">Product</h2>
+          <h3 class="section__header">The BarX-Model and dimensions.</h3>
+        </div>
+
+        <div style="display: flex; justify-content: center">
+          <div class="">
+            <button class="btn btn-primary">BarX</button>
+          </div>
+        </div>
+        <div>
+          <div class="operations">
+            <div class="operations__tab-container">
+              <button
+                class="btn operations__tab operations__tab--1 operations__tab--active"
+                data-tab="1"
+              >
+                <span>01</span>Model
+              </button>
+              <button
+                class="btn operations__tab operations__tab--2"
+                data-tab="2"
+              >
+                <span>02</span>Dimensions
+              </button>
+              <button
+                class="btn operations__tab operations__tab--3"
+                data-tab="3"
+              >
+                <span>03</span>3D-model
+              </button>
+            </div>
+            <div
+              class="operations__content operations__content--1 operations__content--active"
+            >
+              <div class="operations__icon operations__icon--1">
+                <svg>
+                  <use xlink:href="img/icons.svg#icon-upload"></use>
+                </svg>
+              </div>
+              <h5 class="operations__header"></h5>
+              <img src="../static/barx/img/Sikkerhetsmatte_Gummiasfalt.png" />
+            </div>
+            <div class="operations__content operations__content--2">
+              <div class="operations__icon operations__icon--2">
+                <svg>
+                  <use xlink:href="img/icons.svg#icon-home"></use>
+                </svg>
+              </div>
+              <img src="../static/barx/img/Safety_adjustments_Ribs_BarX.png" />
+            </div>
+            <div class="operations__content operations__content--3">
+              <div class="operations__icon operations__icon--3">
+                <svg>
+                  <use xlink:href="img/icons.svg#icon-upload"></use>
+                </svg>
+              </div>
+              <h5 class="operations__header"></h5>
+              <img src="../static/barx/img/Sikkerhetsmatte_Gummiasfalt.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="section--3">
+        <div class="section__title section__title--testimonials">
+          <h2 class="section__description">Not sure yet?</h2>
+          <h3 class="section__header">
+            Many municipalities and counties own this product, and we encourage
+            you to follow their example by also investing in this valuable tool
+            for your municipality or county.
+          </h3>
+        </div>
+
+        <div class="slider">
+          <div class="slide">
+            <div class="testimonial">
+              <h5 class="testimonial__header">Best financial decision ever!</h5>
+              <blockquote class="testimonial__text">
+                Veldig fornøyd med produktet. Kan stå ute hele året, og passer
+                for både voksne og barn
+              </blockquote>
+              <address class="testimonial__author">
+                <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
+                <h6 class="testimonial__name">Tellef Kydland</h6>
+                <p class="testimonial__location">Hamar kommune, Norge</p>
+              </address>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="testimonial">
+              <h5 class="testimonial__header">
+                The last step to becoming a complete minimalist
+              </h5>
+              <blockquote class="testimonial__text">
+                Quisquam itaque deserunt ullam, quia ea repellendus provident,
+                ducimus neque ipsam modi voluptatibus doloremque, corrupti
+                laborum. Incidunt numquam perferendis veritatis neque
+                repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Illo deserunt exercitationem deleniti.
+              </blockquote>
+              <address class="testimonial__author">
+                <img src="img/user-2.jpg" alt="" class="testimonial__photo" />
+                <h6 class="testimonial__name">Miyah Miles</h6>
+                <p class="testimonial__location">London, UK</p>
+              </address>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="testimonial">
+              <h5 class="testimonial__header">
+                Finally free from old-school banks
+              </h5>
+              <blockquote class="testimonial__text">
+                Debitis, nihil sit minus suscipit magni aperiam vel tenetur
+                incidunt commodi architecto numquam omnis nulla autem,
+                necessitatibus blanditiis modi similique quidem. Odio aliquam
+                culpa dicta beatae quod maiores ipsa minus consequatur error
+                sunt, deleniti saepe aliquid quos inventore sequi.
+                Necessitatibus id alias reiciendis, perferendis facere.
+              </blockquote>
+              <address class="testimonial__author">
+                <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
+                <h6 class="testimonial__name">Francisco Gomes</h6>
+                <p class="testimonial__location">Lisbon, Portugal</p>
+              </address>
+            </div>
+          </div>
+
+          <button class="slider__btn slider__btn--left">&larr;</button>
+          <button class="slider__btn slider__btn--right">&rarr;</button>
+          <div class="dots"></div>
+        </div>
+      </section>
+
+      <section class="section section--sign-up">
+        <div class="section__title">
+          <h3 class="section__header">
+            Get in shape while enjoying the fresh air with our outdoor training
+            equipment. Improve your fitness level and feel the burn with a
+            challenging workout in the great outdoors.
+          </h3>
+        </div>
+        <button class="btn btn--show-modal">Get the BarX today!</button>
+      </section>
+
+      <footer class="footer">
+        <ul class="footer__nav">
+          <li class="footer__item">
+            <a class="footer__link" href="#">The BarX</a>
+          </li>
+        </ul>
         <img
-          src="{{url_for('static',path='/todo/img/OXS_logo_sort.png') }}"
+          src="{{url_for('static',path='/barx/img/OXS_logo_hvit.png') }}"
           alt="BarX logo"
-          class="nav__logo"
+          class="footer__logo"
           id="logo"
           designer="Tellef"
           data-version-number="3.0"
         />
-        <ul class="nav__links">
-          <li class="nav__item">
-            <a class="nav__link" href="#section--1">Features</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#section--2">Product details</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#section--3">Feedbacks</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link nav__link--btn btn--show-modal" href="#"
-              >Get the BarX</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <video autoplay muted loop class="back-video">
-          <source
-            src="../static/todo/video/Muscle Garden_BarX Promo.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="header__title">
-          <!-- <h1 onclick="alert('HTML alert')"> -->
-          <!-- <h1> The 
-          <span class="highlight">BarX</span>
-           </h1>  -->
-          <h1>
-            The
-            <span class="highlight">BarX</span> <br>
-            When
-            <!-- Green highlight effect -->
-            <span class="highlight">traning</span>
-            meets<br />
-            <span class="highlight">minimalist</span>
-          </h1>
-          <h4></h4>
-          <button class="btn--text btn--scroll-to">
-            Learn more &DownArrow;
-          </button>
-        </div>
+      </footer>
+
+      <div class="modal hidden">
+        <button class="btn--close-modal">&times;</button>
+        <h2 class="modal__header">
+          Get the BarX <br />
+          in just <span class="highlight">5 minutes</span>
+        </h2>
+        <form
+          class="modal__form"
+          action="https://aktivlek.no/produkt/barx/?gclid=CjwKCAiAhqCdBhB0EiwAH8M_GkIFHzP8yeEtcus8G-yio654f7UwYr-42ZEPAVN_U8YNrvuq7zIy2BoC-48QAvD_BwE"
+        >
+          <label>First Name</label>
+          <input type="text" />
+          <label>Last Name</label>
+          <input type="text" />
+          <label>Email Address</label>
+          <input type="email" />
+          <button type="submit" class="btn">Next step &rarr;</button>
+        </form>
       </div>
-    </header>
+      <div class="overlay hidden"></div>
 
-    <section class="section" id="section--1">
-      <div class="section__title">
-        <h2 class="section__description">Features</h2>
-        <h3 class="section__header">
-          Everything you need in a modern traning equipement.
-        </h3>
-      </div>
-
-      <div class="features">
-        <img
-          src="../static/todo/img/BarX1.jpg"
-          data-src="../static/todo/img/BarX1.jpg"
-          alt="Computer"
-          class="features__img lazy-img"
-        />
-        <div class="features__feature">
-          <div class="features__icon">
-            <svg>
-              <use xlink:href="img/icons.svg#icon-monitor"></use>
-            </svg>
-          </div>
-          <h5 class="features__header">Flexible training</h5>
-          <p>
-            Transform your body and mind with our state-of-the-art training
-            equipment. Whether you're a beginner or a seasoned athlete, our
-            versatile apparatus will push you to new levels of strength and
-            endurance. With customizable workouts and a sleek, compact design,
-            you can easily fit a powerful workout into your busy schedule. Take
-            control of your fitness journey today and see the amazing results
-            for yourself!
-          </p>
-        </div>
-
-        <div class="features__feature">
-          <div class="features__icon">
-            <svg>
-              <use xlink:href="img/icons.svg#icon-trending-up"></use>
-            </svg>
-          </div>
-          <h5 class="features__header">Outdoor Performance</h5>
-          <p>
-            If you're looking to boost your fitness levels and build a
-            strong, lean physique, consider incorporating body weight exercises
-            into your training routine
-          </p>
-        </div>
-        <img
-          src="../static/todo/img/BarX2.jpg"
-          data-src="../static/todo/img/BarX2.jpg"
-          alt="Plant"
-          class="features__img lazy-img"
-        />
-
-        <img
-          src="../static/todo/img/BarX3.jpg"
-          data-src="../static/todo/img/BarX3.jpg"
-          alt="Credit card"
-          class="features__img lazy-img"
-        />
-        <div class="features__feature">
-          <div class="features__icon">
-            <svg>
-              <use xlink:href="img/icons.svg#icon-credit-card"></use>
-            </svg>
-          </div>
-          <h5 class="features__header">Over 25 unque exercises</h5>
-          <p>
-            Training with your own body weight is a highly effective and
-            efficient way to improve your physical fitness. By using your own
-            body as resistance, you can work multiple muscle groups at once,
-            improve your balance and coordination, and increase your overall
-            strength and conditioning.
-            .
-          </p>
-        </div>
-      </div>
-    </section>
-
-  <section class="section" id="section--2">
-    <div class="section__title">
-      <h2 class="section__description">Product</h2>
-      <h3 class="section__header">
-        The BarX-Model and dimensions.
-      </h3>
+      <!-- <script src="script.js"></script> -->
     </div>
-
-    <div style="display: flex; justify-content: center;">
-      <div class="">
-        <button class="btn btn-primary">BarX</button>
-      </div>
-    </div>
-    <div>
-      <div class="operations">
-        <div class="operations__tab-container">
-          <button class="btn operations__tab operations__tab--1 operations__tab--active" data-tab="1">
-            <span>01</span>Model
-          </button>
-          <button class="btn operations__tab operations__tab--2" data-tab="2">
-            <span>02</span>Dimensions
-          </button>
-          <button class="btn operations__tab operations__tab--3" data-tab="3">
-            <span>03</span>3D-model
-          </button>
-        </div>
-        <div class="operations__content operations__content--1 operations__content--active">
-          <div class="operations__icon operations__icon--1">
-            <svg>
-              <use xlink:href="img/icons.svg#icon-upload"></use>
-            </svg>
-          </div>
-          <h5 class="operations__header"></h5>
-          <img src="../static/todo/img/Sikkerhetsmatte_Gummiasfalt.png">
-        </div>
-        <div class="operations__content operations__content--2">
-          <div class="operations__icon operations__icon--2">
-            <svg>
-              <use xlink:href="img/icons.svg#icon-home"></use>
-            </svg>
-          </div>
-          <img src="../static/todo/img/Safety_adjustments_Ribs_BarX.png">
-        </div>
-        <div class="operations__content operations__content--3">
-          <div class="operations__icon operations__icon--3">
-            <svg>
-              <use xlink:href="img/icons.svg#icon-upload"></use>
-            </svg>
-          </div>
-          <h5 class="operations__header"></h5>
-          <img src="../static/todo/img/Sikkerhetsmatte_Gummiasfalt.png">
-        </div>
-      </div>
-    </div>
-    
-  </section>
-    <section class="section" id="section--3">
-      <div class="section__title section__title--testimonials">
-        <h2 class="section__description">Not sure yet?</h2>
-        <h3 class="section__header">
-          Many municipalities and counties own this product, and we encourage you to follow their example by also investing in this valuable tool for your municipality or county.
-        </h3>
-      </div>
-
-      <div class="slider">
-        <div class="slide">
-          <div class="testimonial">
-            <h5 class="testimonial__header">Best financial decision ever!</h5>
-            <blockquote class="testimonial__text">
-              Veldig fornøyd med produktet. Kan stå ute hele året, og passer for både voksne og barn
-            </blockquote>
-            <address class="testimonial__author">
-              <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">Tellef Kydland</h6>
-              <p class="testimonial__location">Hamar kommune, Norge</p>
-            </address>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="testimonial">
-            <h5 class="testimonial__header">
-              The last step to becoming a complete minimalist
-            </h5>
-            <blockquote class="testimonial__text">
-              Quisquam itaque deserunt ullam, quia ea repellendus provident,
-              ducimus neque ipsam modi voluptatibus doloremque, corrupti
-              laborum. Incidunt numquam perferendis veritatis neque repellendus.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-              deserunt exercitationem deleniti.
-            </blockquote>
-            <address class="testimonial__author">
-              <img src="img/user-2.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">Miyah Miles</h6>
-              <p class="testimonial__location">London, UK</p>
-            </address>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="testimonial">
-            <h5 class="testimonial__header">
-              Finally free from old-school banks
-            </h5>
-            <blockquote class="testimonial__text">
-              Debitis, nihil sit minus suscipit magni aperiam vel tenetur
-              incidunt commodi architecto numquam omnis nulla autem,
-              necessitatibus blanditiis modi similique quidem. Odio aliquam
-              culpa dicta beatae quod maiores ipsa minus consequatur error sunt,
-              deleniti saepe aliquid quos inventore sequi. Necessitatibus id
-              alias reiciendis, perferendis facere.
-            </blockquote>
-            <address class="testimonial__author">
-              <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">Francisco Gomes</h6>
-              <p class="testimonial__location">Lisbon, Portugal</p>
-            </address>
-          </div>
-        </div>
-
-        <button class="slider__btn slider__btn--left">&larr;</button>
-        <button class="slider__btn slider__btn--right">&rarr;</button>
-        <div class="dots"></div>
-      </div>
-    </section>
-
-    <section class="section section--sign-up">
-      <div class="section__title">
-        <h3 class="section__header">
-          Get in shape while enjoying the fresh air with our outdoor training equipment. Improve your fitness level and feel the burn with a challenging workout in the great outdoors.
-        </h3>
-      </div>
-      <button class="btn btn--show-modal">Get the BarX today!</button>
-    </section>
-
-    <footer class="footer">
-      <ul class="footer__nav">
-        <li class="footer__item">
-          <a class="footer__link" href="#">The BarX</a>
-        </li>
-      </ul>
-      <img
-      src="{{url_for('static',path='/todo/img/OXS_logo_hvit.png') }}"
-      alt="BarX logo"
-      class="footer__logo"
-      id="logo"
-      designer="Tellef"
-      data-version-number="3.0"
-    />
-    </footer>
-
-    <div class="modal hidden">
-      <button class="btn--close-modal">&times;</button>
-      <h2 class="modal__header">
-        Get the BarX <br />
-        in just <span class="highlight">5 minutes</span>
-      </h2>
-      <form
-        class="modal__form"
-        action="https://aktivlek.no/produkt/barx/?gclid=CjwKCAiAhqCdBhB0EiwAH8M_GkIFHzP8yeEtcus8G-yio654f7UwYr-42ZEPAVN_U8YNrvuq7zIy2BoC-48QAvD_BwE"
-      >
-        <label>First Name</label>
-        <input type="text" />
-        <label>Last Name</label>
-        <input type="text" />
-        <label>Email Address</label>
-        <input type="email" />
-        <button type="submit" class="btn">Next step &rarr;</button>
-      </form>
-    </div>
-    <div class="overlay hidden"></div>
-
-    <!-- <script src="script.js"></script> -->
   </body>
 </html>
